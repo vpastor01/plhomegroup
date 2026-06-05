@@ -382,7 +382,8 @@
       <div class="form-title">Request Your Free Estimate</div>
       <div class="form-subtitle">We typically respond within 2 business hours. All estimates are free — no obligation to move forward.</div>
 
-      <form id="estimate-form" netlify name="free-estimate" onsubmit="handleSubmit(event)">
+      <form id="estimate-form" name="free-estimate" netlify netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="bot-field">
 
         <div class="form-row">
           <div class="form-group">
