@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outdoor Living & Remodeling Aldie VA | P&L Home Group</title>
+  <meta name="description" content="P&L Home Group serves Aldie VA with premium patios, decks, fire pits, and remodeling. Fixed price. Owner on site. Free estimate.">
+  <meta name="google-site-verification" content="np2-2Ibi93HWy5pfmtQIJPyATO4Uhr-bKVRGzcWkuo4">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+  :root{--navy:#1A2E44;--navy-dark:#0f1e2e;--green:#2D6A4F;--green-light:#3a8563;--amber:#E8A020;--amber-light:#f0b440;--offwhite:#F5F7FA;--white:#ffffff;--gray:#6b7280;--light-gray:#e5e7eb;--mid-gray:#9ca3af;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,46,68,0.97);backdrop-filter:blur(8px);height:68px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--white);text-decoration:none;font-weight:700;flex-shrink:0;}
+  .nav-logo span{color:var(--amber);}
+  .nav-center{display:flex;align-items:center;gap:0.25rem;}
+  .nav-item{position:relative;}
+  .nav-item>a,.nav-item>button{color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.875rem;font-weight:500;padding:0.5rem 0.75rem;border-radius:4px;transition:all 0.15s;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:0.3rem;}
+  .nav-item>a:hover,.nav-item>button:hover{color:var(--amber);background:rgba(255,255,255,0.05);}
+  .nav-chevron{font-size:0.6rem;opacity:0.6;transition:transform 0.2s;}
+  .nav-item:hover .nav-chevron{transform:rotate(180deg);}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:var(--navy-dark);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.5rem;min-width:220px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all 0.18s;box-shadow:0 16px 48px rgba(0,0,0,0.4);z-index:300;}
+  .nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown a{display:block;padding:0.6rem 0.9rem;color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.845rem;border-radius:5px;transition:all 0.12s;}
+  .dropdown a:hover{background:rgba(255,255,255,0.07);color:var(--amber);}
+  .dropdown-divider{height:1px;background:rgba(255,255,255,0.08);margin:0.35rem 0;}
+  .nav-right{display:flex;align-items:center;}
+  .nav-cta{background:var(--amber);color:var(--navy)!important;padding:0.55rem 1.25rem;border-radius:5px;font-weight:700!important;font-size:0.875rem!important;text-decoration:none;transition:all 0.15s;white-space:nowrap;}
+  .nav-cta:hover{background:var(--amber-light);transform:translateY(-1px);}
+  .page-hero{background:var(--navy);padding:130px 6% 70px;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(45,106,79,0.25) 0%,transparent 60%);}
+  .page-hero-inner{position:relative;z-index:1;max-width:720px;}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;}
+  .hero-eyebrow::before{content:'';width:24px;height:2px;background:var(--amber);}
+  .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);line-height:1.15;font-weight:900;margin-bottom:1rem;}
+  .page-hero h1 em{font-style:normal;color:var(--amber);}
+  .page-hero p{color:rgba(255,255,255,0.75);font-size:1.05rem;line-height:1.7;margin-bottom:1.75rem;max-width:580px;}
+  .btn-amber{background:var(--amber);color:var(--navy);padding:0.95rem 2rem;border-radius:5px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-block;}
+  .btn-amber:hover{background:var(--amber-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,160,32,0.4);}
+  .btn-ghost{border:2px solid rgba(255,255,255,0.4);color:var(--white);padding:0.95rem 2rem;border-radius:5px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-block;margin-left:1rem;}
+  .btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,0.1);}
+  .btn-green{background:var(--green);color:var(--white);padding:0.95rem 2rem;border-radius:5px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-block;}
+  .btn-green:hover{background:var(--green-light);transform:translateY(-2px);}
+  .section{padding:5rem 6%;}
+  .section-inner{max-width:1160px;margin:0 auto;}
+  .section-tag{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+  .section-h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:var(--navy);line-height:1.2;font-weight:700;margin-bottom:1rem;}
+  .section-lead{font-size:1rem;color:var(--gray);line-height:1.7;max-width:580px;margin-bottom:2.5rem;}
+  .ticker{background:var(--amber);padding:0.7rem 0;overflow:hidden;white-space:nowrap;}
+  .ticker-track{display:inline-flex;animation:ticker 35s linear infinite;}
+  .ticker-item{display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.8rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.8px;}
+  @keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+  .cta-band{background:var(--green);padding:5rem 6%;text-align:center;}
+  .cta-band .section-tag{color:rgba(255,255,255,0.65);}
+  .cta-band .section-h2{color:var(--white);}
+  .cta-sub{font-size:1rem;color:rgba(255,255,255,0.82);line-height:1.7;max-width:580px;margin:0 auto 2.5rem;}
+  .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  .btn-white{background:var(--white);color:var(--green);padding:1rem 2.2rem;border-radius:5px;font-weight:700;text-decoration:none;font-size:0.95rem;transition:all 0.2s;display:inline-block;}
+  .btn-white:hover{background:var(--offwhite);transform:translateY(-2px);}
+  .btn-outline-w{border:2px solid rgba(255,255,255,0.5);color:var(--white);padding:1rem 2.2rem;border-radius:5px;font-weight:600;text-decoration:none;font-size:0.95rem;transition:all 0.2s;display:inline-block;}
+  .btn-outline-w:hover{border-color:var(--white);background:rgba(255,255,255,0.1);}
+  .cta-direct{margin-top:1.75rem;font-size:0.85rem;color:rgba(255,255,255,0.6);}
+  .cta-direct a{color:var(--white);font-weight:600;text-decoration:none;}
+  footer{background:var(--navy-dark);color:rgba(255,255,255,0.65);padding:4.5rem 6% 2rem;}
+  .footer-top{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:3rem;}
+  .footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);text-decoration:none;display:block;margin-bottom:1rem;}
+  .footer-logo span{color:var(--amber);}
+  .footer-about{font-size:0.845rem;line-height:1.7;margin-bottom:1.25rem;}
+  .footer-contact a{display:flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.845rem;margin-bottom:0.4rem;transition:color 0.15s;}
+  .footer-contact a:hover{color:var(--amber);}
+  .f-head{font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--white);margin-bottom:1rem;}
+  .f-links{list-style:none;}
+  .f-links li{margin-bottom:0.45rem;}
+  .f-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.845rem;transition:color 0.15s;}
+  .f-links a:hover{color:var(--amber);}
+  .footer-bottom{max-width:1160px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.78rem;}
+  .f-badges{display:flex;gap:0.75rem;flex-wrap:wrap;}
+  .f-badge{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.3rem 0.75rem;border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6);}
+  .f-legal a{color:rgba(255,255,255,0.4);text-decoration:none;margin-left:1rem;font-size:0.78rem;}
+  .f-legal a:hover{color:var(--amber);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+  .card{background:var(--white);border:1px solid var(--light-gray);border-radius:8px;padding:1.75rem;transition:all 0.2s;}
+  .card:hover{box-shadow:0 6px 28px rgba(45,106,79,0.1);transform:translateY(-2px);border-color:var(--green);}
+  .card-icon{font-size:1.8rem;margin-bottom:0.9rem;}
+  .card-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;color:var(--navy);}
+  .card-text{font-size:0.875rem;color:var(--gray);line-height:1.6;}
+  .check-list{list-style:none;margin-top:1rem;}
+  .check-list li{display:flex;gap:0.75rem;margin-bottom:0.9rem;font-size:0.925rem;color:var(--navy);line-height:1.5;}
+  .check-list li::before{content:'✓';width:20px;height:20px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.65rem;flex-shrink:0;margin-top:2px;}
+  .price-table{width:100%;border-collapse:collapse;margin-top:1.5rem;}
+  .price-table th{background:var(--navy);color:var(--white);padding:0.85rem 1rem;text-align:left;font-size:0.8rem;font-weight:600;letter-spacing:0.5px;}
+  .price-table td{padding:0.85rem 1rem;border-bottom:1px solid var(--light-gray);font-size:0.875rem;}
+  .price-table tr:nth-child(even) td{background:var(--offwhite);}
+  .faq-item{border-bottom:1px solid var(--light-gray);padding:1.25rem 0;}
+  .faq-q{font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:0.5rem;cursor:pointer;}
+  .faq-a{font-size:0.875rem;color:var(--gray);line-height:1.7;}
+  @media(max-width:900px){.two-col,.three-col,.four-col{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;}}
+  @media(max-width:640px){.nav-center{display:none;}.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-logo">P<span>&</span>L Home Group</a>
+  <div class="nav-center">
+    <div class="nav-item">
+      <button>Services <span class="nav-chevron">▼</span></button>
+      <div class="dropdown">
+        <a href="/best-patio-installation.html">Patios &amp; Hardscape</a>
+        <a href="/outdoor-kitchen.html">Outdoor Kitchens</a>
+        <a href="/fire-pit-builder.html">Fire Pits &amp; Fireplaces</a>
+        <a href="/deck-builder.html">Decks &amp; Structures</a>
+        <a href="/retaining-wall.html">Retaining Walls</a>
+        <a href="/landscape-lighting.html">Landscape Lighting</a>
+        <a href="/pergola-builder.html">Pergolas &amp; Pavilions</a>
+        <a href="/fence-builder.html">Fencing</a>
+        <div class="dropdown-divider"></div>
+        <a href="/interior-remodeling.html">Interior Remodeling</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button>Resources <span class="nav-chevron">▼</span></button>
+      <div class="dropdown">
+        <a href="/patio-calculator.html">Patio Calculator</a>
+        <a href="/deck-calculator.html">Deck Calculator</a>
+        <a href="/fire-pit-calculator.html">Fire Pit Calculator</a>
+        <a href="/outdoor-kitchen-calculator.html">Outdoor Kitchen Calculator</a>
+        <a href="/retaining-wall-calculator.html">Retaining Wall Calculator</a>
+        <div class="dropdown-divider"></div>
+        <a href="/guides/patio-pricing-guide.html">Patio Pricing Guide</a>
+        <a href="/resources.html">View All Resources</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="/transformations.html">Our Work</a></div>
+    <div class="nav-item"><a href="/how-we-work.html">How We Work</a></div>
+    <div class="nav-item"><a href="/about.html">About</a></div>
+    <div class="nav-item"><a href="/reviews.html">Reviews</a></div>
+    <div class="nav-item"><a href="/blog.html">Blog</a></div>
+    <div class="nav-item"><a href="/contact.html">Contact</a></div>
+    <div class="nav-item">
+      <button>Trade Partners <span class="nav-chevron">▼</span></button>
+      <div class="dropdown">
+        <a href="/join-our-network.html">Apply to Join</a>
+        <a href="/our-contractors.html">Our Trade Partners</a>
+        <a href="/current-trades-needed.html">Current Trades Needed</a>
+        <a href="/how-we-build.html">How We Work Together</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-right">
+    <a href="/free-estimate.html" class="nav-cta">Book a Free Consultation</a>
+  </div>
+</nav>
+
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Serving Aldie, Loudoun County</div>
+    <h1>Outdoor Living & Remodeling in <em>Aldie, VA</em></h1>
+    <p>P&L Home Group serves Aldie homeowners with premium outdoor living and remodeling. Fixed price in writing. Owner on every project. 47+ five-star reviews.</p>
+    <a href="/free-estimate.html" class="btn-amber">Get a Free Estimate</a>
+    <a href="tel:7036388692" class="btn-ghost">Call 703-638-8692</a>
+  </div>
+</div>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">47+ Five-Star Google Reviews ◆</span>
+    <span class="ticker-item">Belgard · Techo-Bloc · Trex · TimberTech Authorized ◆</span>
+    <span class="ticker-item">VA Class A Licensed Contractors ◆</span>
+    <span class="ticker-item">Fixed Price — Written Guarantee ◆</span>
+    <span class="ticker-item">Owner Accountability Guarantee ◆</span>
+    <span class="ticker-item">2-Year Workmanship Warranty ◆</span>
+    <span class="ticker-item">47+ Five-Star Google Reviews ◆</span>
+    <span class="ticker-item">Belgard · Techo-Bloc · Trex · TimberTech Authorized ◆</span>
+    <span class="ticker-item">VA Class A Licensed Contractors ◆</span>
+    <span class="ticker-item">Fixed Price — Written Guarantee ◆</span>
+    <span class="ticker-item">Owner Accountability Guarantee ◆</span>
+    <span class="ticker-item">2-Year Workmanship Warranty ◆</span>
+  </div>
+</div>
+
+
+<section class="section" style="background:var(--white)">
+  <div class="section-inner two-col">
+    <div>
+      <div class="section-tag">Serving Aldie, Loudoun County</div>
+      <h2 class="section-h2">Premium Outdoor Living in Aldie</h2>
+      <p class="section-lead">P&L Home Group serves Aldie homeowners with premium outdoor living and home remodeling. From custom patios and fire pits to decks, outdoor kitchens, and interior renovations — we handle design and project management end to end with a fixed price in writing.</p>
+      <ul class="check-list">
+        <li>Custom patios, decks, fire pits, outdoor kitchens</li>
+        <li>Retaining walls, pergolas, and landscape lighting</li>
+        <li>Interior remodeling — kitchens, bathrooms, basements</li>
+        <li>Fixed price in writing — no surprises, ever</li>
+        <li>Victor on site every project</li>
+        <li>2-year workmanship warranty in writing</li>
+      </ul>
+    </div>
+    <div style="background:var(--offwhite);border-radius:10px;padding:2rem;border:1px solid var(--light-gray)">
+      <div class="section-tag">Also Serving Nearby</div>
+      <p style="font-size:0.9rem;color:var(--gray);line-height:1.8"><a href="/areas/ashburn.html" style="color:var(--green);text-decoration:none">Ashburn</a> · <a href="/areas/brambleton.html" style="color:var(--green);text-decoration:none">Brambleton</a> · <a href="/areas/leesburg.html" style="color:var(--green);text-decoration:none">Leesburg</a> · <a href="/areas/chantilly.html" style="color:var(--green);text-decoration:none">Chantilly</a></p>
+      <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--light-gray)">
+        <div style="font-weight:700;color:var(--navy);margin-bottom:0.5rem">Get a Free Estimate</div>
+        <div style="font-size:0.875rem;color:var(--gray);margin-bottom:1rem">We'll come to your property in Aldie for a free consultation.</div>
+        <a href="/free-estimate.html" class="btn-amber" style="font-size:0.875rem;padding:0.75rem 1.5rem">Book a Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="section-tag">Ready to Start?</div>
+  <h2 class="section-h2">Get Your Free Estimate Today</h2>
+  <p class="cta-sub">No pressure. No commitment. Just a real conversation about your project — and a fixed price in writing when you're ready to move forward.</p>
+  <div class="cta-btns">
+    <a href="/free-estimate.html" class="btn-white">Book a Free Consultation</a>
+    <a href="https://wa.me/17036388692" class="btn-outline-w">💬 WhatsApp Us</a>
+  </div>
+  <div class="cta-direct">Or call/text Victor directly: <a href="tel:7036388692">703-638-8692</a> · Spanish available</div>
+</section>
+
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="/index.html" class="footer-logo">P<span>&</span>L Home Group</a>
+      <p class="footer-about">Northern Virginia's design and project management firm. We sell the project, create the design, and manage the client. Our vetted trade partners build it to spec. <strong style="color:rgba(255,255,255,0.8)">Loudoun, Fairfax, Prince William, and Shenandoah Valley.</strong></p>
+      <div class="footer-contact">
+        <a href="tel:7036388692">📞 703-638-8692</a>
+        <a href="mailto:info@ploutdoorsolutions.com">✉️ info@ploutdoorsolutions.com</a>
+        <a href="https://wa.me/17036388692">💬 WhatsApp (Spanish available)</a>
+      </div>
+    </div>
+    <div>
+      <div class="f-head">Homeowner Services</div>
+      <ul class="f-links">
+        <li><a href="/best-patio-installation.html">Patios &amp; Hardscape</a></li>
+        <li><a href="/outdoor-kitchen.html">Outdoor Kitchens</a></li>
+        <li><a href="/fire-pit-builder.html">Fire Pits &amp; Fireplaces</a></li>
+        <li><a href="/deck-builder.html">Decks &amp; Structures</a></li>
+        <li><a href="/retaining-wall.html">Retaining Walls</a></li>
+        <li><a href="/landscape-lighting.html">Landscape Lighting</a></li>
+        <li><a href="/interior-remodeling.html">Interior Remodeling</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-head">Trade Partners</div>
+      <ul class="f-links">
+        <li><a href="/join-our-network.html">Apply to Join</a></li>
+        <li><a href="/our-contractors.html">Our Trade Partners</a></li>
+        <li><a href="/current-trades-needed.html">Current Trades Needed</a></li>
+        <li><a href="/how-we-build.html">How We Work Together</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-head">Resources &amp; Calculators</div>
+      <ul class="f-links">
+        <li><a href="/patio-calculator.html">Patio Calculator</a></li>
+        <li><a href="/deck-calculator.html">Deck Calculator</a></li>
+        <li><a href="/fire-pit-calculator.html">Fire Pit Calculator</a></li>
+        <li><a href="/outdoor-kitchen-calculator.html">Outdoor Kitchen Calculator</a></li>
+        <li><a href="/retaining-wall-calculator.html">Retaining Wall Calculator</a></li>
+        <li><a href="/guides/patio-pricing-guide.html">Patio Pricing Guide</a></li>
+        <li><a href="/resources.html">View All Resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-head">Company</div>
+      <ul class="f-links">
+        <li><a href="/about.html">About P&amp;L Home Group</a></li>
+        <li><a href="/how-we-work.html">How We Work</a></li>
+        <li><a href="/transformations.html">Our Work</a></li>
+        <li><a href="/reviews.html">Reviews</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 P&amp;L Outdoor Solutions LLC, DBA P&amp;L Home Group · Leesburg, VA 20176
+      <span class="f-legal"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-use.html">Terms of Use</a></span>
+    </div>
+    <div class="f-badges">
+      <span class="f-badge">⭐ 5.0 Google</span>
+      <span class="f-badge">VA Class A Licensed</span>
+      <span class="f-badge">DPOR Verified</span>
+      <span class="f-badge">Fixed Price Guarantee</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
