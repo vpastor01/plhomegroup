@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P&L Home Group | Home Services Design Firm | Northern Virginia</title>
+  <meta name="description" content="Northern Virginia's home services design firm. P&L Home Group designs, plans, and coordinates outdoor living and interior remodeling projects — patios, kitchens, decks, fire pits & more. Fixed-price process. Call 703-638-8692.">
+  <meta name="google-site-verification" content="np2-2Ibi93HWy5pfmtQIJPyATO4Uhr-bKVRGzcWkuo4">
+  <link rel="canonical" href="https://plhomegroup.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1A2E44;
+      --navy-dark: #0f1e2e;
+      --green: #2D6A4F;
+      --green-light: #3a8563;
+      --amber: #E8A020;
+      --amber-light: #f0b440;
+      --offwhite: #F5F7FA;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --light-gray: #e5e7eb;
+      --mid-gray: #9ca3af;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden;}
+
+    /* ── NAV ── */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:200;
+      background:rgba(26,46,68,0.97);
+      backdrop-filter:blur(8px);
+      height:68px;padding:0 4%;
+      display:flex;align-items:center;justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .nav-logo{
+      font-family:'Playfair Display',serif;font-size:1.35rem;
+      color:var(--white);text-decoration:none;font-weight:700;
+      letter-spacing:-0.3px;flex-shrink:0;
+    }
+    .nav-logo span{color:var(--amber);}
+    .nav-center{display:flex;align-items:center;gap:0.25rem;}
+    .nav-item{position:relative;}
+    .nav-item>a,.nav-item>button{
+      color:rgba(255,255,255,0.85);text-decoration:none;
+      font-size:0.875rem;font-weight:500;padding:0.5rem 0.75rem;
+      border-radius:4px;transition:all 0.15s;background:none;border:none;
+      cursor:pointer;font-family:'DM Sans',sans-serif;
+      display:flex;align-items:center;gap:0.3rem;
+    }
+    .nav-item>a:hover,.nav-item>button:hover{color:var(--amber);background:rgba(255,255,255,0.05);}
+    .nav-chevron{font-size:0.6rem;opacity:0.6;transition:transform 0.2s;}
+    .nav-item:hover .nav-chevron{transform:rotate(180deg);}
+    .dropdown{
+      position:absolute;top:calc(100% + 8px);left:0;
+      background:var(--navy-dark);border:1px solid rgba(255,255,255,0.1);
+      border-radius:8px;padding:0.5rem;min-width:220px;
+      opacity:0;visibility:hidden;transform:translateY(-6px);
+      transition:all 0.18s;box-shadow:0 16px 48px rgba(0,0,0,0.4);
+      z-index:300;
+    }
+    .nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+    .dropdown a{
+      display:block;padding:0.6rem 0.9rem;color:rgba(255,255,255,0.8);
+      text-decoration:none;font-size:0.845rem;border-radius:5px;transition:all 0.12s;
+    }
+    .dropdown a:hover{background:rgba(255,255,255,0.07);color:var(--amber);}
+    .dropdown-divider{height:1px;background:rgba(255,255,255,0.08);margin:0.35rem 0;}
+    .nav-right{display:flex;align-items:center;gap:0.75rem;}
+    .nav-cta{
+      background:var(--amber);color:var(--navy) !important;
+      padding:0.55rem 1.25rem;border-radius:5px;
+      font-weight:700 !important;font-size:0.875rem !important;
+      text-decoration:none;transition:all 0.15s;white-space:nowrap;
+    }
+    .nav-cta:hover{background:var(--amber-light);transform:translateY(-1px);}
+
+    /* ── HERO ── */
+    .hero{
+      position:relative;height:100vh;min-height:640px;
+      display:flex;align-items:center;overflow:hidden;
+    }
+    .hero-img{
+      position:absolute;inset:0;width:100%;height:100%;
+      object-fit:cover;object-position:center;
+    }
+    .hero-overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(
+        105deg,
+        rgba(15,30,46,0.88) 0%,
+        rgba(15,30,46,0.7) 50%,
+        rgba(15,30,46,0.3) 100%
+      );
+    }
+    .hero-content{
+      position:relative;z-index:2;
+      padding:0 6%;max-width:760px;
+    }
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      font-size:0.78rem;font-weight:600;letter-spacing:1.5px;
+      text-transform:uppercase;color:var(--amber);
+      margin-bottom:1.4rem;
+    }
+    .hero-eyebrow::before{content:'';width:28px;height:2px;background:var(--amber);}
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.6rem,5.5vw,4rem);
+      color:var(--white);line-height:1.12;
+      font-weight:900;margin-bottom:1.4rem;
+    }
+    .hero-sub{
+      font-size:1.05rem;color:rgba(255,255,255,0.8);
+      line-height:1.7;margin-bottom:2rem;max-width:540px;font-weight:300;
+    }
+    .hero-sub strong{color:var(--white);font-weight:600;}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+    .btn-amber{
+      background:var(--amber);color:var(--navy);padding:0.95rem 2rem;
+      border-radius:5px;font-weight:700;font-size:0.95rem;
+      text-decoration:none;transition:all 0.2s;display:inline-block;
+    }
+    .btn-amber:hover{background:var(--amber-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,160,32,0.4);}
+    .btn-ghost{
+      border:2px solid rgba(255,255,255,0.4);color:var(--white);
+      padding:0.95rem 2rem;border-radius:5px;font-weight:600;
+      font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-block;
+    }
+    .btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,0.1);}
+    .hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;}
+    .hero-stat{}
+    .hero-stat-num{
+      font-family:'Playfair Display',serif;font-size:2rem;
+      font-weight:900;color:var(--amber);line-height:1;
+    }
+    .hero-stat-label{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:0.2rem;letter-spacing:0.5px;}
+
+    /* ── TICKER ── */
+    .ticker{background:var(--amber);padding:0.7rem 0;overflow:hidden;white-space:nowrap;}
+    .ticker-track{display:inline-flex;animation:ticker 35s linear infinite;}
+    .ticker-item{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      padding:0 2rem;font-size:0.8rem;font-weight:700;
+      color:var(--navy);text-transform:uppercase;letter-spacing:0.8px;
+    }
+    .ticker-sep{opacity:0.35;font-size:0.6rem;}
+    @keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+    /* ── SECTIONS ── */
+    .section{padding:5.5rem 6%;}
+    .section-inner{max-width:1160px;margin:0 auto;}
+    .section-tag{
+      font-size:0.72rem;font-weight:700;letter-spacing:2px;
+      text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;
+    }
+    .section-h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+      color:var(--navy);line-height:1.2;font-weight:700;margin-bottom:1rem;
+    }
+    .section-lead{font-size:1rem;color:var(--gray);line-height:1.7;max-width:540px;}
+
+    /* ── TRUST BADGES ── */
+    .trust-section{background:var(--offwhite);padding:3rem 6%;}
+    .trust-inner{
+      max-width:1160px;margin:0 auto;
+      display:flex;justify-content:center;align-items:center;
+      gap:1rem;flex-wrap:wrap;
+    }
+    .trust-badge{
+      background:var(--white);border:1px solid var(--light-gray);
+      border-radius:8px;padding:0.85rem 1.5rem;
+      display:flex;align-items:center;gap:0.6rem;
+      font-size:0.82rem;font-weight:600;color:var(--navy);
+    }
+    .trust-badge-icon{font-size:1.1rem;}
+
+    /* ── BRANDS ── */
+    .brands-section{background:var(--white);padding:2.5rem 6%;border-top:1px solid var(--light-gray);border-bottom:1px solid var(--light-gray);}
+    .brands-inner{max-width:1000px;margin:0 auto;text-align:center;}
+    .brands-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);margin-bottom:1.5rem;}
+    .brands-row{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .brand-pill{
+      border:1.5px solid var(--light-gray);border-radius:6px;
+      padding:0.6rem 1.4rem;font-weight:700;font-size:0.875rem;
+      color:var(--navy);letter-spacing:0.3px;
+    }
+
+    /* ── WHO WE WORK WITH ── */
+    .fit-section{background:var(--offwhite);}
+    .fit-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+      margin-top:3rem;
+    }
+    .fit-card{
+      background:var(--white);border-radius:10px;
+      padding:2rem;border:1px solid var(--light-gray);
+      position:relative;
+    }
+    .fit-card-tag{
+      font-size:0.72rem;font-weight:700;letter-spacing:1.5px;
+      text-transform:uppercase;color:var(--mid-gray);margin-bottom:0.75rem;
+    }
+    .fit-card-tag.primary{color:var(--green);}
+    .fit-card-tag.guarantee{color:var(--amber);}
+    .fit-card h3{
+      font-family:'Playfair Display',serif;font-size:1.2rem;
+      font-weight:700;color:var(--navy);margin-bottom:0.75rem;
+    }
+    .fit-card p{font-size:0.9rem;color:var(--gray);line-height:1.6;margin-bottom:1rem;}
+    .fit-card-range{
+      font-size:0.8rem;font-weight:600;color:var(--green);
+      background:rgba(45,106,79,0.08);padding:0.3rem 0.75rem;
+      border-radius:4px;display:inline-block;
+    }
+    .not-fit{margin-top:2.5rem;}
+    .not-fit-title{font-size:0.9rem;font-weight:600;color:var(--gray);margin-bottom:1rem;}
+    .not-fit-list{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .not-fit-item{
+      background:var(--white);border:1px solid var(--light-gray);
+      border-radius:20px;padding:0.35rem 1rem;
+      font-size:0.8rem;color:var(--gray);
+      display:flex;align-items:center;gap:0.4rem;
+    }
+    .not-fit-item::before{content:'✕';color:#dc2626;font-size:0.65rem;font-weight:700;}
+
+    /* ── SERVICES ── */
+    .services-section{background:var(--white);}
+    .services-grid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      gap:1.25rem;margin-top:3rem;
+    }
+    .service-card{
+      border:1.5px solid var(--light-gray);border-radius:8px;
+      padding:1.75rem;text-decoration:none;color:var(--navy);
+      transition:all 0.2s;background:var(--white);
+      display:flex;flex-direction:column;
+    }
+    .service-card:hover{
+      border-color:var(--green);
+      box-shadow:0 6px 28px rgba(45,106,79,0.12);
+      transform:translateY(-3px);
+    }
+    .service-icon{font-size:1.8rem;margin-bottom:0.9rem;}
+    .service-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:0.4rem;}
+    .service-desc{font-size:0.85rem;color:var(--gray);line-height:1.6;flex:1;margin-bottom:0.9rem;}
+    .service-arrow{font-size:0.85rem;font-weight:600;color:var(--green);}
+
+    /* ── GUARANTEES ── */
+    .guarantees-section{background:var(--navy);}
+    .guarantees-grid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+      gap:1.25rem;margin-top:3rem;
+    }
+    .g-card{
+      background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+      border-radius:8px;padding:1.75rem;transition:all 0.2s;
+    }
+    .g-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(232,160,32,0.35);}
+    .g-num{
+      font-family:'Playfair Display',serif;font-size:2.5rem;
+      font-weight:900;color:rgba(232,160,32,0.2);line-height:1;margin-bottom:0.4rem;
+    }
+    .g-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--amber);margin-bottom:0.6rem;}
+    .g-desc{font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.65;}
+
+    /* ── HOW WE WORK ── */
+    .process-section{background:var(--offwhite);}
+    .process-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:2rem;margin-top:3rem;position:relative;
+    }
+    .process-grid::before{
+      content:'';position:absolute;
+      top:2.4rem;left:12%;right:12%;height:2px;
+      background:linear-gradient(to right,var(--green),var(--amber));
+    }
+    .p-step{text-align:center;position:relative;}
+    .p-num{
+      width:4.8rem;height:4.8rem;background:var(--navy);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      margin:0 auto 1.25rem;font-family:'Playfair Display',serif;
+      font-size:1.4rem;font-weight:900;color:var(--amber);
+      position:relative;z-index:1;border:3px solid var(--offwhite);
+    }
+    .p-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;}
+    .p-desc{font-size:0.835rem;color:var(--gray);line-height:1.6;}
+
+    /* ── REVIEWS ── */
+    .reviews-section{background:var(--white);}
+    .reviews-header{
+      display:flex;justify-content:space-between;
+      align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:2.5rem;
+    }
+    .rating-block{display:flex;align-items:center;gap:0.75rem;}
+    .rating-num{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;color:var(--navy);line-height:1;}
+    .stars{color:var(--amber);font-size:1.1rem;letter-spacing:2px;}
+    .rating-sub{font-size:0.8rem;color:var(--gray);}
+    .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem;}
+    .r-card{background:var(--offwhite);border-radius:8px;padding:1.6rem;border:1px solid var(--light-gray);}
+    .r-stars{color:var(--amber);font-size:0.85rem;margin-bottom:0.7rem;}
+    .r-text{font-size:0.9rem;color:var(--navy);line-height:1.7;font-style:italic;margin-bottom:1.1rem;}
+    .r-author{font-weight:700;font-size:0.85rem;}
+    .r-location{font-size:0.78rem;color:var(--gray);}
+    .reviews-cta{text-align:center;margin-top:2.5rem;}
+
+    /* ── CTA BAND ── */
+    .cta-band{background:var(--green);padding:5rem 6%;text-align:center;}
+    .cta-band .section-tag{color:rgba(255,255,255,0.65);}
+    .cta-band .section-h2{color:var(--white);}
+    .cta-sub{font-size:1rem;color:rgba(255,255,255,0.82);line-height:1.7;max-width:580px;margin:0 auto 2.5rem;}
+    .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+    .btn-white{background:var(--white);color:var(--green);padding:1rem 2.2rem;border-radius:5px;font-weight:700;text-decoration:none;font-size:0.95rem;transition:all 0.2s;display:inline-block;}
+    .btn-white:hover{background:var(--offwhite);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+    .btn-outline-w{border:2px solid rgba(255,255,255,0.5);color:var(--white);padding:1rem 2.2rem;border-radius:5px;font-weight:600;text-decoration:none;font-size:0.95rem;transition:all 0.2s;display:inline-block;}
+    .btn-outline-w:hover{border-color:var(--white);background:rgba(255,255,255,0.1);}
+    .cta-direct{margin-top:1.75rem;font-size:0.85rem;color:rgba(255,255,255,0.6);}
+    .cta-direct a{color:var(--white);font-weight:600;text-decoration:none;}
+
+    /* ── FOOTER ── */
+    footer{background:var(--navy-dark);color:rgba(255,255,255,0.65);padding:4.5rem 6% 2rem;}
+    .footer-top{
+      max-width:1160px;margin:0 auto;
+      display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+      gap:2.5rem;margin-bottom:3rem;
+    }
+    .footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);text-decoration:none;display:block;margin-bottom:1rem;}
+    .footer-logo span{color:var(--amber);}
+    .footer-about{font-size:0.845rem;line-height:1.7;margin-bottom:1.25rem;}
+    .footer-contact a{display:flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.845rem;margin-bottom:0.4rem;transition:color 0.15s;}
+    .footer-contact a:hover{color:var(--amber);}
+    .f-head{font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--white);margin-bottom:1rem;}
+    .f-links{list-style:none;}
+    .f-links li{margin-bottom:0.45rem;}
+    .f-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.845rem;transition:color 0.15s;}
+    .f-links a:hover{color:var(--amber);}
+    .footer-bottom{
+      max-width:1160px;margin:0 auto;
+      border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;
+      display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;gap:1rem;font-size:0.78rem;
+    }
+    .f-badges{display:flex;gap:0.75rem;flex-wrap:wrap;}
+    .f-badge{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.3rem 0.75rem;border-radius:4px;font-size:0.75rem;color:rgba(255,255,255,0.6);}
+    .f-legal a{color:rgba(255,255,255,0.4);text-decoration:none;margin-left:1rem;font-size:0.78rem;}
+    .f-legal a:hover{color:var(--amber);}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .fit-grid{grid-template-columns:1fr;}
+      .process-grid{grid-template-columns:1fr 1fr;}
+      .process-grid::before{display:none;}
+      .footer-top{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:640px){
+      .hero h1{font-size:2.2rem;}
+      .nav-center{display:none;}
+      .footer-top{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">P<span>&</span>L Home Group</a>
+  <div class="nav-center">
+    <div class="nav-item">
+      <button>Services <span class="nav-chevron">▼</span></button>
+      <div class="dropdown">
+        <a href="/best-patio-installation">Patios & Hardscape</a>
+        <a href="/outdoor-kitchen">Outdoor Kitchens</a>
+        <a href="/fire-pit-builder">Fire Pits & Fireplaces</a>
+        <a href="/deck-builder">Decks & Structures</a>
+        <a href="/retaining-wall">Retaining Walls</a>
+        <a href="/landscape-lighting">Landscape Lighting</a>
+        <a href="/pergola-builder">Pergolas & Pavilions</a>
+        <a href="/fence-builder">Fencing</a>
+        <div class="dropdown-divider"></div>
+        <a href="/interior-remodeling">Interior Remodeling</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button>Resources <span class="nav-chevron">▼</span></button>
+      <div class="dropdown">
+        <a href="/patio-calculator">Patio Calculator</a>
+        <a href="/deck-calculator">Deck Calculator</a>
+        <a href="/fire-pit-calculator">Fire Pit Calculator</a>
+        <a href="/outdoor-kitchen-calculator">Outdoor Kitchen Calculator</a>
+        <a href="/retaining-wall-calculator">Retaining Wall Calculator</a>
+        <div class="dropdown-divider"></div>
+        <a href="/guides/patio-pricing-guide">Patio Pricing Guide</a>
+        <a href="/resources">View All Resources</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="/transformations">Our Work</a></div>
+    <div class="nav-item"><a href="/how-we-work">How We Work</a></div>
+    <div class="nav-item"><a href="/about">About</a></div>
+    <div class="nav-item"><a href="/reviews">Reviews</a></div>
+    <div class="nav-item"><a href="/blog">Blog</a></div>
+    <div class="nav-item"><a href="/contact">Contact</a></div>
+    <div class="nav-item">
+      <button>Trade Partners <span class="nav-chevron">▼</span></button>
+      <div class="dropdown">
+        <a href="/join-our-network">Apply to Join</a>
+        <a href="/our-contractors">Our Trade Partners</a>
+        <a href="/current-trades-needed">Current Trades Needed</a>
+        <a href="/how-we-build">How We Work Together</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-right">
+    <a href="/free-estimate" class="nav-cta">Book a Free Consultation</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img"
+    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80&auto=format&fit=crop"
+    alt="Luxury outdoor patio Northern Virginia"
+    loading="eager">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Design & Project Management — Owner-Led Oversight</div>
+    <h1>Northern Virginia Outdoor Living & Remodeling.<br>Fixed price. Owner on site.<br>Every project your home deserves.</h1>
+    <p class="hero-sub">Custom patios, fire pits, outdoor kitchens, and complete backyard transformations. <strong>Loudoun, Fairfax, Prince William, and Shenandoah Valley.</strong></p>
+    <div class="hero-btns">
+      <a href="/free-estimate" class="btn-amber">Book a Free Consultation</a>
+      <a href="tel:7036388692" class="btn-ghost">Call Victor: 703-638-8692</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">47+</div>
+        <div class="hero-stat-label">Five-Star Reviews</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5.0</div>
+        <div class="hero-stat-label">Google Rating</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">VA A</div>
+        <div class="hero-stat-label">Class A Licensed</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Fixed Price</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">47+ Five-Star Google Reviews <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Belgard · Techo-Bloc · Trex · TimberTech Authorized <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">VA Class A Licensed Contractors <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Fixed Price — Written Guarantee <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Owner Accountability Guarantee <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">2-Year Workmanship Warranty <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">47+ Five-Star Google Reviews <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Belgard · Techo-Bloc · Trex · TimberTech Authorized <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">VA Class A Licensed Contractors <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Fixed Price — Written Guarantee <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Owner Accountability Guarantee <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">2-Year Workmanship Warranty <span class="ticker-sep">◆</span></span>
+  </div>
+</div>
+
+<!-- TRUST BADGES -->
+<div class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-badge"><span class="trust-badge-icon">⭐</span>5.0 Google · 47+ Verified Reviews</div>
+    <div class="trust-badge"><span class="trust-badge-icon">🏛️</span>VA Class A Licensed · DPOR Verified</div>
+    <div class="trust-badge"><span class="trust-badge-icon">🛡️</span>Fully Insured · GL + Workers Comp</div>
+    <div class="trust-badge"><span class="trust-badge-icon">🏅</span>Belgard Certified · Techo-Bloc · Unilock</div>
+    <div class="trust-badge"><span class="trust-badge-icon">💰</span>Fixed Price Only · No Change Orders</div>
+  </div>
+</div>
+
+<!-- BRANDS -->
+<div class="brands-section">
+  <div class="brands-inner">
+    <div class="brands-label">Authorized With</div>
+    <div class="brands-row">
+      <div class="brand-pill">Belgard</div>
+      <div class="brand-pill">Techo-Bloc</div>
+      <div class="brand-pill">Unilock</div>
+      <div class="brand-pill">Trex</div>
+      <div class="brand-pill">TimberTech</div>
+      <div class="brand-pill">Fiberon</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO WE WORK WITH -->
+<section class="section fit-section">
+  <div class="section-inner">
+    <div class="section-tag">Who We Work With</div>
+    <h2 class="section-h2">The right project. The right fit.</h2>
+    <p class="section-lead">We are not the cheapest option — and we are not for everyone. Here is who gets the best results working with us.</p>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <div class="fit-card-tag primary">Primary Focus</div>
+        <h3>Homeowners with a Vision</h3>
+        <p>You own a home in Northern Virginia and want to transform your outdoor space — patio, fire pit, deck, outdoor kitchen, or complete backyard.</p>
+        <span class="fit-card-range">$20K – $150K+ projects</span>
+      </div>
+      <div class="fit-card">
+        <div class="fit-card-tag">Also Available</div>
+        <h3>Interior Remodeling Clients</h3>
+        <p>You are remodeling your kitchen, bathroom, basement, or doing a full home renovation alongside your outdoor project.</p>
+        <span class="fit-card-range">$25K – $250K+ projects</span>
+      </div>
+      <div class="fit-card">
+        <div class="fit-card-tag guarantee">Our Guarantee</div>
+        <h3>Quality-First Buyers</h3>
+        <p>You want a fixed-price contract, owner supervision, and a 2-year warranty — not the cheapest bid, but the right team.</p>
+        <span class="fit-card-range">No change orders. Ever.</span>
+      </div>
+    </div>
+    <div class="not-fit">
+      <div class="not-fit-title">Not a fit for us:</div>
+      <div class="not-fit-list">
+        <div class="not-fit-item">Quick fixes under $10K</div>
+        <div class="not-fit-item">DIY consulting or design-only services</div>
+        <div class="not-fit-item">Ongoing lawn mowing or maintenance</div>
+        <div class="not-fit-item">Projects outside Northern Virginia</div>
+      </div>
+    </div>
+    <div style="margin-top:2rem;">
+      <a href="/join-our-network" style="font-size:0.875rem;color:var(--green);font-weight:600;text-decoration:none;">Contractors: apply here →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section">
+  <div class="section-inner">
+    <div class="section-tag">What We Build</div>
+    <h2 class="section-h2">Premium Outdoor Living<br>& Home Remodeling</h2>
+    <div class="services-grid">
+      <a href="/best-patio-installation" class="service-card">
+        <div class="service-icon">🪨</div>
+        <div class="service-name">Patios & Hardscape</div>
+        <div class="service-desc">Pavers, flagstone, stamped concrete — designed around how you live.</div>
+        <div class="service-arrow">Learn more →</div>
+      </a>
+      <a href="/outdoor-kitchen" class="service-card">
+        <div class="service-icon">🍽️</div>
+        <div class="service-name">Outdoor Kitchens</div>
+        <div class="service-desc">Full outdoor kitchen builds — grills, counters, refrigeration, sinks.</div>
+        <div class="service-arrow">Learn more →</div>
+      </a>
+      <a href="/fire-pit-builder" class="service-card">
+        <div class="service-icon">🔥</div>
+        <div class="service-name">Fire Pits & Fireplaces</div>
+        <div class="service-desc">Built-in gas and wood-burning fire features for your outdoor space.</div>
+        <div class="service-arrow">Learn more →</div>
+      </a>
+      <a href="/deck-builder" class="service-card">
+        <div class="service-icon">🪵</div>
+        <div class="service-name">Decks & Structures</div>
+        <div class="service-desc">Composite and wood decks, screened porches, multi-level builds.</div>
+        <div class="service-arrow">Learn more →</div>
+      </a>
+      <a href="/retaining-wall" class="service-card">
+        <div class="service-icon">🧱</div>
+        <div class="service-name">Retaining Walls</div>
+        <div class="service-desc">Structural and decorative walls in natural stone, block, and boulder.</div>
+        <div class="service-arrow">Learn more →</div>
+      </a>
+      <a href="/landscape-lighting" class="service-card">
+        <div class="service-icon">💡</div>
+        <div class="service-name">Landscape Lighting</div>
+        <div class="service-desc">Low-voltage LED systems that highlight your property day and night.</div>
+        <div class="service-arrow">Learn more →</div>
+      </a>
+      <a href="/pergola-builder" class="service-card">
+        <div class="service-icon">⛺</div>
+        <div class="service-name">Pergolas & Pavilions</div>
+        <div class="service-desc">Custom pergolas and shade structures — freestanding or attached.</div>
+        <div class="service-arrow">Learn more →</div>
+      </a>
+      <a href="/interior-remodeling" class="service-card">
+        <div class="service-icon">🏠</div>
+        <div class="service-name">Interior Remodeling</div>
+        <div class="service-desc">Kitchens, bathrooms, basements — same fixed-price model, indoors.</div>
+        <div class="service-arrow">Learn more →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEES -->
+<section class="section guarantees-section">
+  <div class="section-inner">
+    <div class="section-tag" style="color:rgba(232,160,32,0.7)">Our Promises — In Writing</div>
+    <h2 class="section-h2" style="color:var(--white)">Five Guarantees Every Client Gets Upfront</h2>
+    <div class="guarantees-grid">
+      <div class="g-card">
+        <div class="g-num">01</div>
+        <div class="g-title">Fixed Price. Period.</div>
+        <div class="g-desc">Your price is locked in writing before we start. No change orders, no surprise invoices. What we quote is what you pay.</div>
+      </div>
+      <div class="g-card">
+        <div class="g-num">02</div>
+        <div class="g-title">Owner On Every Job</div>
+        <div class="g-desc">Victor is personally on site for every project. Not a project manager — the owner you hired shows up and stays accountable.</div>
+      </div>
+      <div class="g-card">
+        <div class="g-num">03</div>
+        <div class="g-title">2-Year Warranty Written</div>
+        <div class="g-desc">Every project comes with a 2-year workmanship warranty in your contract. If something isn't right, we fix it. No runaround.</div>
+      </div>
+      <div class="g-card">
+        <div class="g-num">04</div>
+        <div class="g-title">3D Design Included</div>
+        <div class="g-desc">You see your project in 3D before a single stone is moved. The planning deposit covers your design and credits 100% toward your project.</div>
+      </div>
+      <div class="g-card">
+        <div class="g-num">05</div>
+        <div class="g-title">Owner Accountability Guarantee</div>
+        <div class="g-desc">We put our timeline in writing. If we miss it without cause, you get credited for any delays outside our control. We stand behind our schedule.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="section process-section">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-tag">The Process</div>
+    <h2 class="section-h2">How We Work</h2>
+    <p class="section-lead" style="margin:0 auto;">Simple. Transparent. Built around you.</p>
+    <div class="process-grid" style="text-align:left;">
+      <div class="p-step">
+        <div class="p-num">1</div>
+        <div class="p-title">Free Consultation</div>
+        <div class="p-desc">We meet at your property, listen to your vision, and walk the space. No pressure, no pitch.</div>
+      </div>
+      <div class="p-step">
+        <div class="p-num">2</div>
+        <div class="p-title">3D Design</div>
+        <div class="p-desc">Photorealistic 3D design so you see exactly what you're getting before you commit.</div>
+      </div>
+      <div class="p-step">
+        <div class="p-num">3</div>
+        <div class="p-title">Fixed Price Contract</div>
+        <div class="p-desc">Detailed scope, timeline, and fixed price in writing. Sign when you're confident.</div>
+      </div>
+      <div class="p-step">
+        <div class="p-num">4</div>
+        <div class="p-title">Build & Deliver</div>
+        <div class="p-desc">Victor on site with our vetted trade partners. We build, you stay updated, and we don't leave until it's right.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section">
+  <div class="section-inner">
+    <div class="reviews-header">
+      <div>
+        <div class="section-tag">What Clients Say</div>
+        <h2 class="section-h2">47 Homeowners. Every One, Five Stars.</h2>
+      </div>
+      <div class="rating-block">
+        <div class="rating-num">5.0</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="rating-sub">47 Google Reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="r-card">
+        <div class="r-stars">★★★★★</div>
+        <div class="r-text">"Victor was on site every single day. The patio came out better than the 3D design — and it came in exactly at the price he quoted. Not a penny over."</div>
+        <div class="r-author">Michael T.</div>
+        <div class="r-location">Ashburn, VA</div>
+      </div>
+      <div class="r-card">
+        <div class="r-stars">★★★★★</div>
+        <div class="r-text">"We'd been burned by contractors before — surprise costs, no-shows, shoddy work. P&L was completely different. Fixed price, showed up every day, finished on time."</div>
+        <div class="r-author">Jennifer R.</div>
+        <div class="r-location">Leesburg, VA</div>
+      </div>
+      <div class="r-card">
+        <div class="r-stars">★★★★★</div>
+        <div class="r-text">"The 3D design process alone was worth it. We could see exactly what we were getting before anything was built. The fire pit and patio turned out exactly like the render."</div>
+        <div class="r-author">David & Sarah K.</div>
+        <div class="r-location">Great Falls, VA</div>
+      </div>
+    </div>
+    <div class="reviews-cta">
+      <a href="/reviews" class="btn-amber">Read All 47 Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="section-tag">Ready to Start?</div>
+  <h2 class="section-h2">Get Your Free Estimate Today</h2>
+  <p class="cta-sub">No pressure. No commitment. Just a real conversation about your project — and a fixed price in writing when you're ready to move forward.</p>
+  <div class="cta-btns">
+    <a href="/free-estimate" class="btn-white">Book a Free Consultation</a>
+    <a href="https://wa.me/17036388692" class="btn-outline-w">💬 WhatsApp Us</a>
+  </div>
+  <div class="cta-direct">Or call/text Victor directly: <a href="tel:7036388692">703-638-8692</a> · Spanish available</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="/" class="footer-logo">P<span>&</span>L Home Group</a>
+      <p class="footer-about">Northern Virginia's design and project management firm. We sell the project, create the design, and manage the client. Our vetted trade partners build it to spec. <strong style="color:rgba(255,255,255,0.8)">Northern Virginia — Loudoun, Fairfax, Prince William, and Shenandoah Valley.</strong></p>
+      <div class="footer-contact">
+        <a href="tel:7036388692">📞 703-638-8692</a>
+        <a href="mailto:info@ploutdoorsolutions.com">✉️ info@ploutdoorsolutions.com</a>
+        <a href="https://wa.me/17036388692">💬 WhatsApp (Spanish available)</a>
+      </div>
+    </div>
+    <div>
+      <div class="f-head">Homeowner Services</div>
+      <ul class="f-links">
+        <li><a href="/best-patio-installation">Patios & Hardscape</a></li>
+        <li><a href="/outdoor-kitchen">Outdoor Kitchens</a></li>
+        <li><a href="/fire-pit-builder">Fire Pits & Fireplaces</a></li>
+        <li><a href="/deck-builder">Decks & Structures</a></li>
+        <li><a href="/retaining-wall">Retaining Walls</a></li>
+        <li><a href="/landscape-lighting">Landscape Lighting</a></li>
+        <li><a href="/interior-remodeling">Interior Remodeling</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-head">Trade Partners</div>
+      <ul class="f-links">
+        <li><a href="/join-our-network">Apply to Join</a></li>
+        <li><a href="/our-contractors">Our Trade Partners</a></li>
+        <li><a href="/current-trades-needed">Current Trades Needed</a></li>
+        <li><a href="/how-we-build">How We Work Together</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-head">Resources & Calculators</div>
+      <ul class="f-links">
+        <li><a href="/patio-calculator">Patio Calculator</a></li>
+        <li><a href="/deck-calculator">Deck Calculator</a></li>
+        <li><a href="/fire-pit-calculator">Fire Pit Calculator</a></li>
+        <li><a href="/outdoor-kitchen-calculator">Outdoor Kitchen Calculator</a></li>
+        <li><a href="/retaining-wall-calculator">Retaining Wall Calculator</a></li>
+        <li><a href="/guides/patio-pricing-guide">Patio Pricing Guide</a></li>
+        <li><a href="/resources">View All Resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-head">Company</div>
+      <ul class="f-links">
+        <li><a href="/about">About P&L Home Group</a></li>
+        <li><a href="/how-we-work">How We Work</a></li>
+        <li><a href="/transformations">Our Work</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/resources">Resources</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 P&L Outdoor Solutions LLC, DBA P&L Home Group — All Rights Reserved · Leesburg, VA 20176
+      <span class="f-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-use">Terms of Use</a>
+      </span>
+    </div>
+    <div class="f-badges">
+      <span class="f-badge">⭐ 5.0 Google</span>
+      <span class="f-badge">VA Class A Licensed</span>
+      <span class="f-badge">DPOR Verified</span>
+      <span class="f-badge">Fixed Price Guarantee</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hardscape Contractor Leesburg VA | P&L Home Group</title>
-  <meta name="description" content="P&L Home Group provides hardscape in Leesburg. Fixed price. Owner on site. Free estimate.">
+  <title>Gravel Calculator Northern Virginia | P&L Home Group</title>
+  <meta name="description" content="Use P&L Home Group's gravel cost calculator to estimate your Northern Virginia project. Get a fixed price with a free consultation.">
   <meta name="google-site-verification" content="np2-2Ibi93HWy5pfmtQIJPyATO4Uhr-bKVRGzcWkuo4">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -158,9 +158,9 @@
 
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="hero-eyebrow">Hardscape · Leesburg</div>
-    <h1>Hardscape Contractor Leesburg in <em>Leesburg</em></h1>
-    <p>P&L Home Group provides premium hardscape in Leesburg. Fixed price in writing. Owner on every project. VA Class A Licensed. Free estimate.</p>
+    <div class="hero-eyebrow">Gravel Estimator</div>
+    <h1>Gravel Calculator</h1>
+    <p>Get a rough estimate for your gravel project in Northern Virginia. This calculator gives ballpark ranges — your fixed price is confirmed after a free consultation.</p>
     <a href="/free-estimate.html" class="btn-amber">Get a Free Estimate</a>
     <a href="tel:7036388692" class="btn-ghost">Call 703-638-8692</a>
   </div>
@@ -185,22 +185,40 @@
 
 
 <section class="section" style="background:var(--white)">
-  <div class="section-inner">
-    <div class="section-tag">Hardscape in Leesburg</div>
-    <h2 class="section-h2">Hardscape Contractor Leesburg VA</h2>
-    <p class="section-lead">P&L Home Group serves Leesburg homeowners with premium hardscape. We handle design and project management end to end — fixed price in writing, owner on every job, 2-year workmanship warranty.</p>
-    <ul class="check-list">
-      <li>Fixed price in writing — no surprises</li>
-      <li>Victor on site every project</li>
-      <li>VA Class A Licensed and fully insured</li>
-      <li>3D design included with planning deposit</li>
-      <li>2-year workmanship warranty in writing</li>
-      <li>47+ five-star Google reviews</li>
-    </ul>
-    <div style="margin-top:2rem"><a href="/free-estimate.html" class="btn-amber">Get a Free Estimate in Leesburg</a></div>
+  <div class="section-inner" style="max-width:700px">
+    <div class="section-tag">Estimate Tool</div>
+    <h2 class="section-h2">Gravel Calculator</h2>
+    <div style="background:var(--offwhite);border-radius:12px;padding:2.5rem;border:1px solid var(--light-gray);margin-top:2rem">
+      <label style="display:block;font-size:0.875rem;font-weight:600;color:var(--navy);margin-bottom:0.5rem">Square Feet: <span id="val-display" style="color:var(--green)">1000</span></label>
+      <input type="range" id="calc-slider" min="100" max="5000" value="1000" style="width:100%;accent-color:var(--green);margin-bottom:2rem"
+        oninput="calcUpdate(this.value)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem">
+        <div style="text-align:center;background:var(--white);border-radius:8px;padding:1.5rem;border:1px solid var(--light-gray)">
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Low Estimate</div>
+          <div id="low-est" style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--navy)">—</div>
+        </div>
+        <div style="text-align:center;background:var(--white);border-radius:8px;padding:1.5rem;border:1px solid var(--amber);box-shadow:0 0 0 2px rgba(232,160,32,0.15)">
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem">High Estimate</div>
+          <div id="high-est" style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--navy)">—</div>
+        </div>
+      </div>
+      <div style="background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.3);border-radius:8px;padding:1rem;font-size:0.82rem;color:var(--gray);margin-bottom:2rem">
+        ⚠️ These are rough ballpark ranges only. Actual costs depend on materials, site conditions, complexity, and your specific design. Your fixed price is locked in writing after a free on-site consultation.
+      </div>
+      <a href="/free-estimate.html" class="btn-amber" style="width:100%;text-align:center;display:block">Get My Fixed Price — Free Estimate</a>
+    </div>
   </div>
 </section>
-
+<script>
+  const rates = {'low': parseFloat('$1 – $4 per sq ft'.split('–')[0].replace(/[^0-9.]/g,'')), 'high': parseFloat('$1 – $4 per sq ft'.split('–')[1].replace(/[^0-9.]/g,''))};
+  function fmt(n){return '$'+Math.round(n).toLocaleString();}
+  function calcUpdate(v){
+    document.getElementById('val-display').textContent=v;
+    document.getElementById('low-est').textContent=fmt(v*rates.low);
+    document.getElementById('high-est').textContent=fmt(v*rates.high);
+  }
+  calcUpdate(1000);
+</script>
 <section class="cta-band">
   <div class="section-tag">Ready to Start?</div>
   <h2 class="section-h2">Get Your Free Estimate Today</h2>
