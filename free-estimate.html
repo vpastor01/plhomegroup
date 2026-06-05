@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Free Estimate | P&L Home Group — Northern Virginia</title>
+  <meta name="description" content="Request a free outdoor living or remodeling estimate from P&L Home Group. Fixed price in writing. Owner on every project. Serving Northern Virginia and Shenandoah Valley.">
+  <link rel="canonical" href="https://plhomegroup.com/free-estimate">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1A2E44;
+      --navy-dark: #111f30;
+      --green: #2D6A4F;
+      --green-light: #3a8563;
+      --amber: #E8A020;
+      --offwhite: #F5F7FA;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --light-gray: #e5e7eb;
+      --error: #dc2626;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--offwhite); color: var(--navy); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy); padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); text-decoration: none; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-cta { background: var(--amber); color: var(--navy) !important; padding: 0.6rem 1.4rem; border-radius: 4px; font-weight: 600 !important; }
+
+    .page-hero {
+      background: var(--navy);
+      padding: 140px 5% 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(45,106,79,0.3) 0%, transparent 60%);
+    }
+    .page-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(232,160,32,0.15); border: 1px solid rgba(232,160,32,0.4);
+      color: var(--amber); padding: 0.4rem 1rem; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--white); line-height: 1.15; margin-bottom: 1rem; font-weight: 900;
+    }
+    .page-hero h1 em { font-style: normal; color: var(--amber); }
+    .page-hero p { color: rgba(255,255,255,0.75); font-size: 1.05rem; line-height: 1.7; }
+
+    .main-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 5%;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* FORM */
+    .form-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 40px rgba(26,46,68,0.08);
+      border: 1px solid var(--light-gray);
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; line-height: 1.5; }
+
+    .form-group { margin-bottom: 1.25rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.3px;
+    }
+
+    label .req { color: var(--amber); margin-left: 2px; }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--light-gray);
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--navy);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(45,106,79,0.1);
+    }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    .services-checkboxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: var(--navy);
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .checkbox-item:hover { background: var(--offwhite); }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 16px; height: 16px;
+      accent-color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .budget-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .budget-option {
+      border: 1.5px solid var(--light-gray);
+      border-radius: 6px;
+      padding: 0.6rem 0.75rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--navy);
+      text-align: center;
+      transition: all 0.15s;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+    }
+
+    .budget-option:hover, .budget-option.selected {
+      border-color: var(--green);
+      background: rgba(45,106,79,0.06);
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--amber);
+      color: var(--navy);
+      border: none;
+      padding: 1.1rem;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    .submit-btn:hover {
+      background: #f0b440;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(232,160,32,0.35);
+    }
+
+    .form-disclaimer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    /* SUCCESS STATE */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .success-icon {
+      width: 72px; height: 72px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+    }
+
+    .success-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .success-text { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 100px; }
+
+    .sidebar-block {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.75rem;
+      border: 1px solid var(--light-gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+
+    .guarantee-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+
+    .g-icon {
+      width: 28px; height: 28px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: white;
+      font-size: 0.75rem;
+      margin-top: 1px;
+    }
+
+    .g-text strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+
+    .g-text span { font-size: 0.8rem; color: var(--gray); line-height: 1.4; }
+
+    .contact-block { background: var(--navy); border-radius: 10px; padding: 1.75rem; }
+
+    .contact-block .sidebar-title { color: var(--white); }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .contact-method:last-child { border-bottom: none; }
+    .contact-method:hover { color: var(--amber); }
+
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+    .contact-value { font-weight: 600; color: var(--white); }
+
+    .planning-deposit {
+      background: rgba(232,160,32,0.08);
+      border: 1px solid rgba(232,160,32,0.3);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .deposit-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .deposit-text { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .main-content { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+      .budget-options { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">P<span>&</span>L Home Group</a>
+  <ul class="nav-links">
+    <li><a href="/services">Services</a></li>
+    <li><a href="/transformations">Our Work</a></li>
+    <li><a href="/reviews">Reviews</a></li>
+    <li><a href="/guarantees">Guarantees</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/free-estimate" class="nav-cta">Free Estimate</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-badge">No Pressure · No Commitment</div>
+    <h1>Let's Talk About<br>Your <em>Project</em></h1>
+    <p>Tell us what you're thinking — we'll come to your property, walk the space, and give you a fixed price in writing. No sales pressure, no runaround.</p>
+  </div>
+</div>
+
+<div class="main-content">
+  <!-- FORM -->
+  <div class="form-card">
+    <div id="form-state">
+      <div class="form-title">Request Your Free Estimate</div>
+      <div class="form-subtitle">We typically respond within 2 business hours. All estimates are free — no obligation to move forward.</div>
+
+      <form id="estimate-form" onsubmit="handleSubmit(event)">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" name="first_name" placeholder="Victor" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" name="last_name" placeholder="Pastor" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number <span class="req">*</span></label>
+            <input type="tel" name="phone" placeholder="(703) 000-0000" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" name="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Property Address <span class="req">*</span></label>
+          <input type="text" name="address" placeholder="123 Main St, Leesburg, VA 20176" required>
+        </div>
+
+        <div class="form-group">
+          <label>City / Area <span class="req">*</span></label>
+          <select name="city" required>
+            <option value="">Select your city...</option>
+            <option>Leesburg</option>
+            <option>Ashburn</option>
+            <option>Sterling</option>
+            <option>Herndon</option>
+            <option>Chantilly</option>
+            <option>Fairfax</option>
+            <option>Vienna</option>
+            <option>McLean</option>
+            <option>Great Falls</option>
+            <option>Centreville</option>
+            <option>Gainesville</option>
+            <option>Haymarket</option>
+            <option>Warrenton</option>
+            <option>Purcellville</option>
+            <option>Round Hill</option>
+            <option>Aldie</option>
+            <option>Brambleton</option>
+            <option>Winchester</option>
+            <option>Front Royal</option>
+            <option>Berryville</option>
+            <option>Strasburg</option>
+            <option>Woodstock</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Services You're Interested In <span class="req">*</span></label>
+          <div class="services-checkboxes">
+            <label class="checkbox-item"><input type="checkbox" name="services" value="patio"> Custom Patio</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="deck"> Deck / Porch</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="fire-pit"> Fire Pit</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="outdoor-kitchen"> Outdoor Kitchen</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="pergola"> Pergola / Pavilion</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="retaining-wall"> Retaining Wall</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="lighting"> Landscape Lighting</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="interior"> Interior Remodeling</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Estimated Budget Range</label>
+          <div class="budget-options">
+            <button type="button" class="budget-option" onclick="selectBudget(this, 'Under $10K')">Under $10K</button>
+            <button type="button" class="budget-option" onclick="selectBudget(this, '$10K–$25K')">$10K–$25K</button>
+            <button type="button" class="budget-option" onclick="selectBudget(this, '$25K–$50K')">$25K–$50K</button>
+            <button type="button" class="budget-option" onclick="selectBudget(this, '$50K–$100K')">$50K–$100K</button>
+            <button type="button" class="budget-option" onclick="selectBudget(this, '$100K+')">$100K+</button>
+            <button type="button" class="budget-option" onclick="selectBudget(this, 'Not Sure')">Not Sure</button>
+          </div>
+          <input type="hidden" name="budget" id="budget-value">
+        </div>
+
+        <div class="form-group">
+          <label>When Are You Looking to Start?</label>
+          <select name="timeline">
+            <option value="">Select timeline...</option>
+            <option>ASAP</option>
+            <option>Within 1 month</option>
+            <option>1–3 months</option>
+            <option>3–6 months</option>
+            <option>6–12 months</option>
+            <option>Just exploring for now</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Tell Us About Your Project</label>
+          <textarea name="description" placeholder="Describe what you have in mind — size, materials, features, anything that's important to you..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>How Did You Hear About Us?</label>
+          <select name="source">
+            <option value="">Select...</option>
+            <option>Google Search</option>
+            <option>Google Maps</option>
+            <option>Neighbor Referral</option>
+            <option>Friend / Family</option>
+            <option>Instagram / Facebook</option>
+            <option>Nextdoor</option>
+            <option>Saw Our Work</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Request My Free Estimate →</button>
+
+        <div class="form-disclaimer">
+          By submitting this form you agree to be contacted by P&L Home Group.<br>
+          We never sell your information. Spanish available upon request.
+        </div>
+
+      </form>
+    </div>
+
+    <div class="success-state" id="success-state">
+      <div class="success-icon">✓</div>
+      <div class="success-title">We Got Your Request!</div>
+      <p class="success-text">Thanks for reaching out. Victor will contact you within 2 business hours to schedule your free on-site consultation.<br><br>In the meantime, feel free to call or text directly at <strong>703-638-8692</strong>.</p>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-block">
+      <div class="sidebar-title">What You Can Expect</div>
+      <div class="guarantee-row">
+        <div class="g-icon">✓</div>
+        <div class="g-text">
+          <strong>Response Within 2 Hours</strong>
+          <span>Victor personally responds to every estimate request during business hours.</span>
+        </div>
+      </div>
+      <div class="guarantee-row">
+        <div class="g-icon">✓</div>
+        <div class="g-text">
+          <strong>Free On-Site Visit</strong>
+          <span>We come to your property, walk the space, and listen to your vision. No charge.</span>
+        </div>
+      </div>
+      <div class="guarantee-row">
+        <div class="g-icon">✓</div>
+        <div class="g-text">
+          <strong>Fixed Price in Writing</strong>
+          <span>You get a detailed scope and locked price before any work begins. No surprises.</span>
+        </div>
+      </div>
+      <div class="guarantee-row">
+        <div class="g-icon">✓</div>
+        <div class="g-text">
+          <strong>3D Design Included</strong>
+          <span>See your project before we build it. Photorealistic renders included with your planning deposit.</span>
+        </div>
+      </div>
+      <div class="guarantee-row" style="margin-bottom:0">
+        <div class="g-icon">✓</div>
+        <div class="g-text">
+          <strong>No Pressure</strong>
+          <span>If you're not ready to move forward, that's fine. No follow-up harassment.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-block">
+      <div class="sidebar-title">Prefer to Reach Out Directly?</div>
+      <a href="tel:7036388692" class="contact-method">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Call or Text</div>
+          <div class="contact-value">703-638-8692</div>
+        </div>
+      </a>
+      <a href="https://wa.me/17036388692" class="contact-method">
+        <div class="contact-icon">💬</div>
+        <div>
+          <div class="contact-label">WhatsApp (Spanish available)</div>
+          <div class="contact-value">Message Victor</div>
+        </div>
+      </a>
+      <a href="mailto:info@ploutdoorsolutions.com" class="contact-method">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">info@ploutdoorsolutions.com</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="planning-deposit">
+      <div class="deposit-title">💡 About the Planning Deposit</div>
+      <div class="deposit-text">After your free consultation, we offer an optional Planning Deposit that covers your full 3D design. This deposit credits 100% toward your project when you move forward — so it costs you nothing extra.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let selectedBudget = '';
+
+  function selectBudget(el, value) {
+    document.querySelectorAll('.budget-option').forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+    document.getElementById('budget-value').value = value;
+    selectedBudget = value;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    // In production, connect to Netlify Forms or a backend
+    // For now, show success state
+    document.getElementById('form-state').style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
