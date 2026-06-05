@@ -212,13 +212,24 @@
       <div style="background:var(--offwhite);border-radius:10px;padding:2rem;border:1px solid var(--light-gray)">
         <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem">Send a Message</div>
         <div style="font-size:0.85rem;color:var(--gray);margin-bottom:1.5rem">Victor responds personally within 2 business hours.</div>
-        <form onsubmit="event.preventDefault();this.innerHTML='<div style=text-align:center;padding:2rem><div style=font-size:2rem>✓</div><div style=font-weight:700;margin-top:0.5rem>Message sent!</div><div style=color:var(--gray);font-size:0.875rem;margin-top:0.5rem>Victor will be in touch shortly.</div></div>'">
-          <div style="margin-bottom:1rem"><input type="text" placeholder="Your name" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem"></div>
-          <div style="margin-bottom:1rem"><input type="tel" placeholder="Phone number" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem"></div>
-          <div style="margin-bottom:1rem"><input type="email" placeholder="Email address" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem"></div>
-          <div style="margin-bottom:1.25rem"><textarea placeholder="Tell us about your project..." rows="4" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem;resize:vertical"></textarea></div>
+        <form name="contact" netlify netlify-honeypot="bot-field" id="contactForm">
+          <input type="hidden" name="bot-field">
+          <div style="margin-bottom:1rem"><input type="text" name="name" placeholder="Your name" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem"></div>
+          <div style="margin-bottom:1rem"><input type="tel" name="phone" placeholder="Phone number" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem"></div>
+          <div style="margin-bottom:1rem"><input type="email" name="email" placeholder="Email address" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem"></div>
+          <div style="margin-bottom:1.25rem"><textarea name="message" placeholder="Tell us about your project..." rows="4" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem;resize:vertical"></textarea></div>
           <button type="submit" style="width:100%;background:var(--amber);color:var(--navy);border:none;padding:1rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer">Send Message</button>
         </form>
+        <div id="contactSuccess" style="display:none;text-align:center;padding:2rem"><div style="font-size:2rem">&#10003;</div><div style="font-weight:700;margin-top:0.5rem">Message sent!</div><div style="color:var(--gray);font-size:0.875rem;margin-top:0.5rem">Victor will be in touch shortly.</div></div>
+        <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const data = new FormData(this);
+          await fetch('/', {method:'POST', body: data});
+          this.style.display = 'none';
+          document.getElementById('contactSuccess').style.display = 'block';
+        });
+        </script>
       </div>
     </div>
   </div>
