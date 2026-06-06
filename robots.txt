@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Priority pages for crawlers
+Allow: /best-patio-installation
+Allow: /outdoor-kitchen
+Allow: /deck-builder
+Allow: /fire-pit-builder
+Allow: /retaining-wall
+Allow: /pergola-builder
+Allow: /landscape-lighting
+Allow: /hardscape-contractor
+Allow: /outdoor-living-contractor
+Allow: /interior-remodeling
+Allow: /free-estimate
+Allow: /contact
+Allow: /about
+Allow: /reviews
+Allow: /guarantees
+Allow: /join-our-network
+Allow: /blog
+
+# Disallow internal/utility pages
+Disallow: /ads/
+Disallow: /growth-suite
+Disallow: /partner-flyer
+Disallow: /entity-authority
+Disallow: /ai-citation-hub
+
+Sitemap: https://plhomegroup.com/sitemap.xml
