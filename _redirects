@@ -1,0 +1,5 @@
+# Redirect old domain to new domain - 301 permanent
+https://ploutdoorva.com/* https://plhomegroup.com/:splat 301!
+https://www.ploutdoorva.com/* https://plhomegroup.com/:splat 301!
+https://ploutdoorva.com https://plhomegroup.com 301!
+https://www.ploutdoorva.com https://plhomegroup.com 301!
