@@ -186,11 +186,120 @@
 
 <section class="section" style="background:var(--white)">
   <div class="section-inner" style="max-width:760px">
-    <div class="section-tag">For Contractors</div>
-    <h2 class="section-h2">Join Our Contractor Network</h2>
-    <p class="section-lead">Apply to join the P&L Home Group trade partner network. We're always looking for licensed, quality-focused subcontractors in Northern Virginia.</p>
-    <p style="font-size:0.9rem;color:var(--gray);line-height:1.7;margin-top:1rem">P&L Home Group is a design and project management firm. We handle sales, design, and client relationships — and we work with licensed trade partners to execute the physical work. If you're a quality-focused licensed contractor in Northern Virginia, we want to talk.</p>
-    <div style="margin-top:2rem"><a href="/contact.html" class="btn-amber">Get in Touch</a></div>
+    <div class="section-tag">Apply to Join</div>
+    <h2 class="section-h2">Contractor Application</h2>
+    <p class="section-lead">Fill out the form below and Victor will follow up within 1–2 business days. We review every application personally.</p>
+    <p style="font-size:0.9rem;color:var(--gray);line-height:1.7;margin-top:0.5rem;margin-bottom:2rem">P&L Home Group is a design and project management firm. We handle sales, design, and client relationships — our trade partners execute the physical work. We are selective about who we bring on. Every partner must be licensed, insured, and quality-focused.</p>
+
+    <form name="contractor-application" netlify netlify-honeypot="bot-field" id="contractorForm" style="display:flex;flex-direction:column;gap:1rem;">
+      <input type="hidden" name="bot-field">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div>
+          <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Your Name <span style="color:var(--amber)">*</span></label>
+          <input type="text" name="name" required placeholder="John Smith" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;transition:border-color 0.15s;">
+        </div>
+        <div>
+          <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Company Name <span style="color:var(--amber)">*</span></label>
+          <input type="text" name="company" required placeholder="Smith Hardscaping LLC" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;">
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div>
+          <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Phone Number <span style="color:var(--amber)">*</span></label>
+          <input type="tel" name="phone" required placeholder="703-555-0000" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;">
+        </div>
+        <div>
+          <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Email Address <span style="color:var(--amber)">*</span></label>
+          <input type="email" name="email" required placeholder="john@smithhardscaping.com" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;">
+        </div>
+      </div>
+
+      <div>
+        <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Trade / Specialty <span style="color:var(--amber)">*</span></label>
+        <select name="trade" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;background:white;color:var(--navy);">
+          <option value="">Select your primary trade...</option>
+          <option>Hardscape / Paver Installation</option>
+          <option>Deck & Framing Contractor</option>
+          <option>Masonry & Stone Work</option>
+          <option>Outdoor Kitchen & Structures</option>
+          <option>Landscape Lighting</option>
+          <option>Fencing</option>
+          <option>Excavation & Grading</option>
+          <option>General Carpentry</option>
+          <option>Interior Remodeling</option>
+          <option>Plumbing</option>
+          <option>Electrical</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div>
+          <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">VA Contractor License # <span style="color:var(--amber)">*</span></label>
+          <input type="text" name="license_number" required placeholder="2705-XXXXXX" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;">
+        </div>
+        <div>
+          <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">License Class</label>
+          <select name="license_class" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;background:white;color:var(--navy);">
+            <option>Class A</option>
+            <option>Class B</option>
+            <option>Class C</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Do you carry General Liability and Workers Comp insurance? <span style="color:var(--amber)">*</span></label>
+        <select name="insurance" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;background:white;color:var(--navy);">
+          <option value="">Select...</option>
+          <option>Yes — both GL and Workers Comp</option>
+          <option>Yes — GL only (sole proprietor)</option>
+          <option>No — I'm working on getting coverage</option>
+        </select>
+      </div>
+
+      <div>
+        <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Years in Business</label>
+        <select name="years_in_business" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;background:white;color:var(--navy);">
+          <option>Less than 1 year</option>
+          <option>1–3 years</option>
+          <option>3–5 years</option>
+          <option>5–10 years</option>
+          <option>10+ years</option>
+        </select>
+      </div>
+
+      <div>
+        <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Service Areas</label>
+        <input type="text" name="service_areas" placeholder="e.g. Loudoun County, Fairfax County, Northern Virginia" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;">
+      </div>
+
+      <div>
+        <label style="display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Tell Us About Your Work</label>
+        <textarea name="about" rows="4" placeholder="Briefly describe your business, the type of projects you typically work on, crew size, and why you want to work with P&L Home Group." style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-gray);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.875rem;resize:vertical;"></textarea>
+      </div>
+
+      <button type="submit" style="background:var(--amber);color:var(--navy);border:none;padding:1rem 2rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;width:100%;">Submit Application →</button>
+      <p style="font-size:0.78rem;color:var(--gray);text-align:center;">Victor reviews every application personally and follows up within 1–2 business days.</p>
+    </form>
+
+    <div id="contractorSuccess" style="display:none;text-align:center;padding:3rem 2rem;background:#f0faf4;border-radius:12px;border:1px solid #a7d9b8;">
+      <div style="font-size:2.5rem;margin-bottom:0.75rem">✓</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem">Application Received</div>
+      <div style="font-size:0.9rem;color:var(--gray);line-height:1.6;">Victor will review your application and follow up within 1–2 business days. Thank you for your interest in the P&L Home Group trade partner network.</div>
+    </div>
+
+    <script>
+    document.getElementById('contractorForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      await fetch('/', {method: 'POST', body: data});
+      this.style.display = 'none';
+      document.getElementById('contractorSuccess').style.display = 'block';
+    });
+    </script>
   </div>
 </section>
 <section class="cta-band">
